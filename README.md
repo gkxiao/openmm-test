@@ -5,10 +5,12 @@
 
 ### QUICK计算rwRESP电荷
 
+```bash
+export QUICK_BASIS=/home/gkxiao/.conda/miniforge/envs/AmberTools26/AmberTools/src/quick/basis
+quick.cuda 4zlz_resp.inp
+antechamber -i 4zlz_resp.out -fi quick -o 4zlz_rwresp.mol2 -fo mol2 -c resp -s 2 -rn LIG -at gaff2
 ```
-
-```
-
+参见`QUICK`目录
 
 ## 使用AmberTools26准备体系
 
