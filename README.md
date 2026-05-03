@@ -53,7 +53,7 @@ python /public/gkxiao/software/mayachemtools/bin/OpenMMPerformMinimization.py \
   --platform CPU \
   --platformParams "threads,0" \
   --overwrite \
-  --outfilePrefix 8v6y_7_complex_relaxed
+  --outfilePrefix 8V6Y_7_complex_relaxed
 ```
 
 其中：
