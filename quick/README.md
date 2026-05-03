@@ -16,11 +16,16 @@ parmchk2 -i 4zlz_rwresp.mol2 -f mol2 -o lig.frcmod
 - 在后续的AMBER 系统参数准备中，要确保结合构象使用的电荷与生成力场参数文件（FRCMOD文件）时的一致的。
 
 将rwRESP电荷迁移到结合构象上：
+
 ```bash
-# 准备临时的框架分子，其中bcc电荷是临时存放
 antechamber -fi sdf -i lig_bound.sdf -fo mol2 -o lig_bound_framework.mol2 -s 2 -at gaff2 -c bcc
 ```
 注意：此处 -c bcc 是临时的，只是为了让 antechamber 生成一个“完整”的 mol2 文件，包含正确的原子类型和连接信息。稍后我们会替换电荷。
+
+将 `4zlz_rwresp.mol2` 中每个原子的 RESP 电荷值，精确地复制到 lig_bound_framework.mol2 的对应原子上。这通常通过编写脚本（如 awk, python）或使用编辑器（如 vi, emacs）的宏来完成。你必须确保原子的顺序和类型完全匹配，并保存为lig_bound_rwresp.mol2。
+
+这个新的文件可以用来准备后续的top7与rst7等AMBER系统文件。
+
 
 ## 文献
 
