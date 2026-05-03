@@ -6,7 +6,7 @@
 ### QUICK计算rwRESP电荷
 
 ```bash
-# QUICK计算
+# QUICK进行几何优化与ESP计算
 export QUICK_BASIS=/home/gkxiao/.conda/miniforge/envs/AmberTools26/AmberTools/src/quick/basis
 quick.cuda 4zlz_resp.inp
 # 生成rwRESP电荷的mol2文件
