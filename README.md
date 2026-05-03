@@ -73,6 +73,7 @@ python /public/gkxiao/software/mayachemtools/bin/OpenMMPerformMinimization.py \
 其中：
 - `8v6y_prot.pdb` 是包含必要水的蛋白结构文件。
 - `7_D.sdf` 是Flare Docking的一个pose。
+- 没有使用--waterBox yes，保留原有水分子（包括共晶水），但不添加额外水盒子
 
 ## 文献
 1. Yize Jiang, Xinze Li, Yuanyuan Zhang, et al. “PoseX: AI Defeats Physics Approaches on Protein-Ligand Cross Docking.” arXiv:2505.01700. Preprint, arXiv, April 26, 2026. https://doi.org/10.48550/arXiv.2505.01700.
