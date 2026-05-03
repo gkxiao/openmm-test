@@ -5,7 +5,7 @@
 
 ## 使用Mayachemtools
 
-### 分子对接结果的`relax`
+### 1. 分子对接结果的`relax`
 
 在POSEX[1]一文中，作者提出了Relax对接结果的方法，可以使用`MayaChemTools`的脚本`OpenMMPerformMinimization.py`来实现：
 
