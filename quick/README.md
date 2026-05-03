@@ -13,7 +13,7 @@ parmchk2 -i 4zlz_rwresp.mol2 -f mol2 -o lig.frcmod
 注意：
 - rwRESP计算的参数组合为：ESPGRID_SPACING=0.05 f_rwt=431.0， 这相当昂贵，但是在CUDA加速下我认为相当快
 - 推荐的均衡计算速度与稳健性的组合是：ESPGRID_SPACING=0.25 f_rwt=17.0 ，这是QUICK的默认参数
-- 在后续的AMBER 系统参数准备中，要确保结合构象使用的电荷与生成力场参数文件（FRCMOD文件）时的一致的。
+- 在后续的AMBER 系统参数准备中，要确保结合构象使用的电荷与生成力场参数文件（FRCMOD文件）是一致的。
 
 将rwRESP电荷迁移到结合构象上：
 
