@@ -24,8 +24,11 @@ antechamber -fi sdf -i lig_bound.sdf -fo mol2 -o lig_bound_framework.mol2 -s 2 -
 
 将 `4zlz_rwresp.mol2` 中每个原子的 RESP 电荷值，精确地复制到 lig_bound_framework.mol2 的对应原子上。这通常通过编写脚本（如 awk, python）或使用编辑器（如 vi, emacs）的宏来完成。你必须确保原子的顺序和类型完全匹配，并保存为lig_bound_rwresp.mol2。
 
-这个新的文件可以用来准备后续的top7与rst7等AMBER系统文件。
+```bash
+charge_transfer.py 4zlz_rwresp.mol2 lig_bound_framework.mol2 lig_bound_rwresp.mol2
+```
 
+这个新的文件`lig_bound_rwresp.mol2`可以用于准备后续的top7与rst7等AMBER系统文件。当然，也可以直接用这个文件生成力场参数文件lig.frcmod。
 
 ## 文献
 
