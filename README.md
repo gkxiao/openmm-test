@@ -12,6 +12,13 @@ antechamber -i 4zlz_resp.out -fi quick -o 4zlz_rwresp.mol2 -fo mol2 -c resp -s 2
 ```
 参见`QUICK`目录
 
+生成gaff2力场参数文件
+
+```
+parmchk2 -i 4zlz_rwresp.mol2 -f mol2 -o 4zlz_lig.frcmod
+```
+
+
 ## 使用AmberTools26准备体系
 
 ## 使用Mayachemtools
