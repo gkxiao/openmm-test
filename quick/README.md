@@ -1,4 +1,9 @@
-使用QUICK计算rwRESP电荷
+## 使用QUICK计算rwRESP电荷
+
+```bash
+export QUICK_BASIS=/home/gkxiao/.conda/miniforge/envs/AmberTools26/AmberTools/src/quick/basis
+quick 4zlz_resp.inp > 4zlz_resp.out
+```
 
 ## 文献
 
