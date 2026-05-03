@@ -33,22 +33,25 @@ F=0.5 \times k \times \big[(x-x_0)^2 + (y-y_0)^2 + (z-z_0)^2\big]
 该协议核心为**受约束的分子动力学优化（Constrained molecular dynamics optimization）**。
 并非长时间尺度动力学构象采样，而是短时能量最小化过程：快速修复AI预测结构中分子内/分子间立体碰撞（clashes），优化键长、键角等立体化学参数，让预测结合姿势在物理上更合理。
 
+#### 使用`OpenMMPerformMinimization.py`实现
 `POSEX MD-Relax`协议可以使用`MayaChemTools`的脚本`OpenMMPerformMinimization.py`来实现：
 
 ```bash
-python $MAYACHEMTOOLS/bin/OpenMMPerformMinimization.py -i 8v6y_prot.pdb \
--s 7_D.sdf  \
---forcefieldParams "biopolymer,amber14-all.xml,smallMolecule,openff-2.2.1,water,amber14/tip3pfb.xml"   \
---restraintAtoms yes   \
---restraintAtomsParams "selection,CAlphaProtein"   \
---restraintSpringConstant 2.5   \
---systemParams "constraints,BondsInvolvingHydrogens,nonbondedMethodNonPeriodic,NoCutoff,rigidWater,yes"   \
---simulationParams "minimizationMaxSteps,0,minimizationTolerance,0.24"   \
---outputParams "minimizationDataSteps,100,minimizationDataStdout,yes,minimizationDataLog,yes"   \
---platform CPU   \
---platformParams "threads,0"   \
---overwrite   \
---outfilePrefix 8V6Y_7_complex_relaxed
+python /public/gkxiao/software/mayachemtools/bin/OpenMMPerformMinimization.py \
+  -i 8v6y_prot.pdb \
+  -s 7_D.sdf \                          # 指定独立的小分子对接结果文件
+  --smallMolID LIG \                    # 可选：指定配体在输出PDB中的残基名，默认为LIG
+  --forcefieldParams "biopolymer,amber14-all.xml,smallMolecule,openff-2.2.1,water,amber14/tip3pfb.xml" \
+  --restraintAtoms yes \
+  --restraintAtomsParams "selection,CAlphaProtein" \
+  --restraintSpringConstant 2.5 \
+  --systemParams "constraints,BondsInvolvingHydrogens,nonbondedMethodNonPeriodic,NoCutoff,rigidWater,yes" \
+  --simulationParams "minimizationMaxSteps,0,minimizationTolerance,0.24" \
+  --outputParams "minimizationDataSteps,100,minimizationDataStdout,yes,minimizationDataLog,yes" \
+  --platform CPU \
+  --platformParams "threads,0" \
+  --overwrite \
+  --outfilePrefix 8v6y_7_complex_relaxed
 ```
 
 其中：
