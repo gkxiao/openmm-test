@@ -28,7 +28,7 @@ antechamber -fi sdf -i lig_bound.sdf -fo mol2 -o lig_bound_framework.mol2 -s 2 -
 charge_transfer.py 4zlz_rwresp.mol2 lig_bound_framework.mol2 lig_bound_rwresp.mol2
 ```
 
-这个新的文件`lig_bound_rwresp.mol2`可以用于准备后续的top7与rst7等AMBER系统文件。当然，也可以直接用这个文件生成力场参数文件lig.frcmod。
+这个新的文件`lig_bound_rwresp.mol2`可以用于准备后续的top7与rst7等AMBER系统文件。当然，也可以直接用这个文件生成力场参数文件`lig.frcmod`，这样在操作上更整洁。
 
 ## 文献
 
