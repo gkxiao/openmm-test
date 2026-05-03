@@ -13,6 +13,14 @@ parmchk2 -i 4zlz_rwresp.mol2 -f mol2 -o lig.frcmod
 注意：
 - rwRESP计算的参数组合为：ESPGRID_SPACING=0.05 f_rwt=431.0， 这相当昂贵，但是在CUDA加速下我认为相当快
 - 推荐的均衡计算速度与稳健性的组合是：ESPGRID_SPACING=0.25 f_rwt=17.0 ，这是QUICK的默认参数
+- 在后续的AMBER 系统参数准备中，要确保结合构象使用的电荷与生成力场参数文件（FRCMOD文件）时的一致的。
+
+将rwRESP电荷迁移到结合构象上：
+```bash
+# 准备临时的框架分子，其中bcc电荷是临时存放
+antechamber -fi sdf -i lig_bound.sdf -fo mol2 -o lig_bound_framework.mol2 -s 2 -at gaff2 -c bcc
+```
+注意：此处 -c bcc 是临时的，只是为了让 antechamber 生成一个“完整”的 mol2 文件，包含正确的原子类型和连接信息。稍后我们会替换电荷。
 
 ## 文献
 
