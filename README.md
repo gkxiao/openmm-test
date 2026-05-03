@@ -1,6 +1,15 @@
 # openmm-test
 记录分别尝试使用Amber System与OpenMM System进行分子动力学模拟的练习。
 
+## 使用AMBER工具链
+
+### QUICK计算rwRESP电荷
+
+```
+
+```
+
+
 ## 使用AmberTools26准备体系
 
 ## 使用Mayachemtools
